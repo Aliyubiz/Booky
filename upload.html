@@ -81,3 +81,11 @@
   <script src="scripts/upload.js" type="module"></script>
 </body>
 </html>
+<form id="upload-form">
+  <input type="text" id="book-title" placeholder="Book Title" required />
+  <input type="text" id="book-author" placeholder="Author Name" required />
+  <input type="file" id="book-file" accept=".pdf" required />
+  <button type="submit">Upload Book</button>
+  <p id="upload-status"></p>
+</form>
+<script type="module" src="scripts/upload.js"></script>
