@@ -1,0 +1,119 @@
+/* General reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Header */
+header {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #ff9900;
+  color: black;
+}
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Hero section */
+.hero {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Book cards */
+.books .book {
+  background-color: white;
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid #ff9900;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.books .book h4 {
+  margin-top: 0;
+}
+
+.books .book a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #ff9900;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.books .book a:hover {
+  background-color: #e68a00;
+}
+
+/* Forms (login & contact) */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #ff9900;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #e68a00;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
