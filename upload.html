@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Book – Booky</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    .upload-container {
+      max-width: 500px;
+      margin: 80px auto;
+      background: #111;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .upload-container h2 {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .upload-container input,
+    .upload-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #222;
+      border: none;
+      color: #ddd;
+      border-radius: 4px;
+    }
+
+    .upload-container button {
+      width: 100%;
+      padding: 12px;
+      background: #1E90FF;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    label {
+      color: #ccc;
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">📖 Booky</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <div class="upload-container">
+    <h2>Upload a Book</h2>
+
+    <input type="text" id="title" placeholder="Book Title" />
+    <input type="text" id="author" placeholder="Author Name" />
+    <textarea id="description" rows="4" placeholder="Book Description"></textarea>
+
+    <label for="cover">Cover Image</label>
+    <input type="file" id="cover" accept="image/*" />
+
+    <label for="file">Book File (PDF or EPUB)</label>
+    <input type="file" id="file" accept=".pdf,.epub" />
+
+    <button id="upload-btn">Upload Book</button>
+  </div>
+
+  <script src="scripts/upload.js" type="module"></script>
+</body>
+</html>
