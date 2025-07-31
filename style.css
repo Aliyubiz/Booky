@@ -1,0 +1,84 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  background: #e9f5ff;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero .cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.books-section {
+  padding: 40px 30px;
+}
+
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.book-card h3 {
+  margin: 10px 0 5px;
+}
+
+footer {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+}
