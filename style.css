@@ -1,23 +1,20 @@
-/* General reset */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
-  color: #222;
+  background: #f7f7f7;
 }
 
-/* Header */
 header {
-  background-color: #1e1e1e;
+  background-color: #2c3e50;
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
+.logo {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 nav {
@@ -26,94 +23,48 @@ nav {
 
 nav a {
   color: white;
+  margin: 0 10px;
   text-decoration: none;
-  margin: 0 15px;
-  padding: 8px 12px;
-  border-radius: 5px;
 }
 
-nav a:hover,
-nav a.active {
-  background-color: #ff9900;
-  color: black;
-}
-
-/* Main content */
-main {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-/* Hero section */
-.hero {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
+.search-bar {
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 20px;
 }
 
-/* Book cards */
-.books .book {
-  background-color: white;
-  margin: 20px 0;
-  padding: 20px;
-  border-left: 5px solid #ff9900;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+#searchInput {
+  padding: 10px;
+  width: 70%;
+  max-width: 400px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-.books .book h4 {
-  margin-top: 0;
-}
-
-.books .book a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 14px;
-  background-color: #ff9900;
-  color: black;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.books .book a:hover {
-  background-color: #e68a00;
-}
-
-/* Forms (login & contact) */
-form {
+.books {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
 }
 
-form input,
-form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  background-color: #ff9900;
-  color: black;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #e68a00;
-}
-
-/* Footer */
-footer {
-  background-color: #1e1e1e;
-  color: white;
+.book {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
   text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+}
+
+.book h4 {
+  margin: 0 0 10px 0;
+}
+
+.book a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
 }
