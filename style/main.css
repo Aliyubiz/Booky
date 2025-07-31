@@ -106,3 +106,26 @@ footer {
   font-size: 0.9em;
   color: var(--fg);
 }
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.book-card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+  color: white;
+  text-align: center;
+}
+
+.book-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1E90FF;
+  text-decoration: none;
+  font-weight: bold;
+}
