@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Read Book – Booky</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    .reader-container {
+      padding: 20px;
+    }
+
+    .reader-container h2 {
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+      background: #222;
+    }
+
+    .back-link {
+      margin: 20px 0;
+      display: inline-block;
+      color: #1E90FF;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">📖 Booky</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <div class="reader-container">
+    <a href="index.html" class="back-link">← Back to Library</a>
+    <h2 id="book-title">Loading book...</h2>
+    <iframe id="book-viewer" src=""></iframe>
+  </div>
+
+  <script type="module" src="scripts/reader.js"></script>
+</body>
+</html>
