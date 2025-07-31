@@ -1,125 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Library | Booky</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .library-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    .library-container h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .book-card {
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .book-card h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
-    }
-
-    .book-card p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .book-card a {
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
-      background: #2ecc71;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo">📘 Booky</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="upload.html">Upload</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
-
-  <div class="library-container">
-    <h2>📚 Booky Library</h2>
-    <div class="book-grid">
-      <!-- Example Book -->
-      <div class="book-card">
-        <h3>The Hustle Code</h3>
-        <p>by Aliyu</p>
-        <a href="books/the-hustle-code.pdf" download>Download</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booky - Read Free Books</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">📚 Booky</h1>
+        <nav class="space-x-4 text-sm">
+          <a href="#" class="hover:text-blue-500">Home</a>
+          <a href="#" class="hover:text-blue-500">About</a>
+          <a href="#" class="hover:text-blue-500">Contact</a>
+          <a href="#" class="hover:text-blue-500">Login</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="book-card">
-        <h3>Rich Mind Poor Pocket</h3>
-        <p>by Anonymous</p>
-        <a href="books/rich-mind.pdf" download>Download</a>
+    <!-- Search Bar -->
+    <div class="bg-blue-100 py-8">
+      <div class="max-w-4xl mx-auto px-4">
+        <input
+          type="text"
+          placeholder="Search for books, authors, genres..."
+          class="w-full p-4 rounded-xl border border-blue-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
       </div>
-
-      <!-- Add more book-cards here -->
     </div>
-/* Smooth fade-in on scroll */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease forwards;
-}
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <!-- Sidebar -->
+      <aside class="md:col-span-1 space-y-4">
+        <h2 class="text-lg font-semibold text-gray-700">Categories</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-blue-500">Action</a></li>
+          <li><a href="#" class="hover:text-blue-500">Romance</a></li>
+          <li><a href="#" class="hover:text-blue-500">Sci-Fi</a></li>
+          <li><a href="#" class="hover:text-blue-500">Thriller</a></li>
+          <li><a href="#" class="hover:text-blue-500">Biography</a></li>
+          <li><a href="#" class="hover:text-blue-500">Mystery</a></li>
+        </ul>
+      </aside>
 
-/* Book card hover effect */
-.book-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+      <!-- Books Grid -->
+      <main class="md:col-span-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Book Card -->
+        <div class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img
+            src="https://covers.openlibrary.org/b/id/10509325-L.jpg"
+            alt="Book Cover"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-sm font-semibold">The Great Gatsby</h3>
+            <p class="text-xs text-gray-500">by F. Scott Fitzgerald</p>
+          </div>
+        </div>
 
-.book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
+        <!-- More sample books -->
+        <div class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img
+            src="https://covers.openlibrary.org/b/id/10507430-L.jpg"
+            alt="Book Cover"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-sm font-semibold">1984</h3>
+            <p class="text-xs text-gray-500">by George Orwell</p>
+          </div>
+        </div>
 
-/* Fancy button effect */
-button, .book-card a {
-  transition: background 0.3s, transform 0.2s;
-}
+        <div class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img
+            src="https://covers.openlibrary.org/b/id/10841128-L.jpg"
+            alt="Book Cover"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-sm font-semibold">To Kill a Mockingbird</h3>
+            <p class="text-xs text-gray-500">by Harper Lee</p>
+          </div>
+        </div>
 
-button:hover, .book-card a:hover {
-  background: #1abc9c;
-  transform: scale(1.02);
-}
+        <div class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img
+            src="https://covers.openlibrary.org/b/id/8231996-L.jpg"
+            alt="Book Cover"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-sm font-semibold">Moby Dick</h3>
+            <p class="text-xs text-gray-500">by Herman Melville</p>
+          </div>
+        </div>
+      </main>
+    </div>
 
-/* Sticky navbar */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+    <!-- Footer -->
+    <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+      &copy; 2025 Booky. All rights reserved.
+    </footer>
+  </body>
+</html>
