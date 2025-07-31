@@ -86,11 +86,13 @@
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    auth.signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        alert("Login successful!");
-        window.location.href = "library.html"; // Go to library after login
-      })
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ✅ Redirect to your library or homepage
+    window.location.href = "library.html";
+  })
       .catch((error) => {
         alert("Login failed: " + error.message);
       });
