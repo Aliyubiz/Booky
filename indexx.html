@@ -2,48 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Booky | Home</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booky - Your Free Book Hub</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>Booky</h1>
+    <div class="logo">📘 Booky</div>
     <nav>
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="upload.html">Upload Book</a>
       <a href="login.html">Login</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Welcome to Booky</h2>
-      <p>Your free online library. Explore, read, and download great books.</p>
-    </section>
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search books...">
+  </div>
 
-    <section class="books">
-      <h3>Featured Books</h3>
-
-      <div class="book">
-        <h4>The Hustle Code</h4>
-        <p>A story about tech, dreams, and the streets.</p>
-        <a href="books/hustle-code.pdf" download>Download PDF</a>
-      </div>
-
-      <div class="book">
-        <h4>Dreams of Lagos</h4>
-        <p>Poetry and pain from the heart of Naija.</p>
-        <a href="books/dreams-of-lagos.pdf" download>Download PDF</a>
-      </div>
-
-      <!-- Add more books here later -->
-    </section>
+  <!-- Book List -->
+  <main class="books">
+    <div class="book">
+      <h4>The Hustle Code</h4>
+      <a href="books/hustle-code.pdf" download>Download</a>
+    </div>
+    <div class="book">
+      <h4>Rich Dad Poor Dad</h4>
+      <a href="books/richdad.pdf" download>Download</a>
+    </div>
+    <div class="book">
+      <h4>Atomic Habits</h4>
+      <a href="books/atomic.pdf" download>Download</a>
+    </div>
+    <!-- Add more books as needed -->
   </main>
 
-  <footer>
-    <p>&copy; 2025 Booky. Built from the grind.</p>
-  </footer>
-</body>
-</html>
+  <!-- JavaScript Search Logic -->
+  <script>
+    const searchInput = document.get
