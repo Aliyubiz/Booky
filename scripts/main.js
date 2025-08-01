@@ -1,38 +1,44 @@
 // scripts/main.js
 
-const books = [
-  {
-    title: "The Bone Forest",
-    author: "Robert Holdstock",
-    img: "images/default-cover.jpg",
-    link: "book.html?book=bone-forest"
-  },
-  {
-    title: "1984",
-    author: "George Orwell",
-    img: "images/default-cover.jpg",
-    link: "book.html?book=1984"
-  },
-  {
-    title: "The Time Machine",
-    author: "H.G. Wells",
-    img: "images/default-cover.jpg",
-    link: "book.html?book=time-machine"
+import { db } from './firebase.js';
+import {
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const bookList = document.getElementById("book-list");
+
+async function loadBooks() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "books"));
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+
+      const card = document.createElement("div");
+      card.className = "book-card";
+
+      const img = document.createElement("img");
+      img.src = data.coverURL;
+      img.alt = data.title;
+
+      const title = document.createElement("div");
+      title.className = "book-title";
+      title.textContent = data.title;
+
+      card.appendChild(img);
+      card.appendChild(title);
+
+      // Optional: Make it open the book file when clicked
+      card.addEventListener("click", () => {
+        window.open(data.bookURL, "_blank");
+      });
+
+      bookList.appendChild(card);
+    });
+  } catch (err) {
+    console.error("Error loading books: ", err.message);
+    bookList.innerHTML = "<p style='color:red'>Failed to load books.</p>";
   }
-];
+}
 
-const container = document.getElementById("book-list");
-
-books.forEach(book => {
-  const card = document.createElement("div");
-  card.className = "book-card";
-  card.innerHTML = `
-    <img src="${book.img}" alt="${book.title}">
-    <div class="info">
-      <h3>${book.title}</h3>
-      <p>by ${book.author}</p>
-      <a href="${book.link}">Read Online</a>
-    </div>
-  `;
-  container.appendChild(card);
-});
+loadBooks();
