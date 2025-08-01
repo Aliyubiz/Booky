@@ -3,58 +3,52 @@
 import { storage, db } from './firebase.js';
 import {
   ref,
-  uploadBytesResumable,
+  uploadBytes,
   getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-
 import {
   collection,
   addDoc,
   Timestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const form = document.getElementById('upload-form');
-const titleInput = document.getElementById('book-title');
-const authorInput = document.getElementById('book-author');
-const fileInput = document.getElementById('book-file');
-const statusText = document.getElementById('upload-status');
+const uploadBtn = document.getElementById("upload-btn");
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+if (uploadBtn) {
+  uploadBtn.addEventListener("click", async () => {
+    const title = document.getElementById("book-title").value;
+    const bookFile = document.getElementById("book-file").files[0];
+    const coverFile = document.getElementById("cover-image").files[0];
 
-  const title = titleInput.value.trim();
-  const author = authorInput.value.trim();
-  const file = fileInput.files[0];
-
-  if (!title || !author || !file) {
-    alert("Fill all fields and select a file!");
-    return;
-  }
-
-  const filePath = `books/${Date.now()}_${file.name}`;
-  const storageRef = ref(storage, filePath);
-
-  const uploadTask = uploadBytesResumable(storageRef, file);
-
-  uploadTask.on('state_changed',
-    (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      statusText.textContent = `Uploading: ${progress.toFixed(1)}%`;
-    },
-    (error) => {
-      console.error(error);
-      statusText.textContent = "Upload failed!";
-    },
-    async () => {
-      const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-      await addDoc(collection(db, "books"), {
-        title,
-        author,
-        url: downloadURL,
-        timestamp: Timestamp.now()
-      });
-      statusText.textContent = "✅ Upload complete!";
-      form.reset();
+    if (!title || !bookFile || !coverFile) {
+      alert("Please fill in all fields.");
+      return;
     }
-  );
-});
+
+    try {
+      // Upload book
+      const bookRef = ref(storage, `books/${Date.now()}_${bookFile.name}`);
+      await uploadBytes(bookRef, bookFile);
+      const bookURL = await getDownloadURL(bookRef);
+
+      // Upload cover
+      const coverRef = ref(storage, `covers/${Date.now()}_${coverFile.name}`);
+      await uploadBytes(coverRef, coverFile);
+      const coverURL = await getDownloadURL(coverRef);
+
+      // Save to Firestore
+      await addDoc(collection(db, "books"), {
+        title: title,
+        bookURL: bookURL,
+        coverURL: coverURL,
+        uploadedAt: Timestamp.now()
+      });
+
+      alert("Book uploaded successfully!");
+      window.location.href = "index.html";
+
+    } catch (err) {
+      alert("Upload failed: " + err.message);
+    }
+  });
+}
